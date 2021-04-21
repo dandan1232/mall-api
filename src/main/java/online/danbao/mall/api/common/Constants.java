@@ -8,7 +8,7 @@ package online.danbao.mall.api.common;
 public class Constants {
     /*上传文件的默认url前缀，根据自己的情况修改
      * */
-    public final static String FILE_UPLOAD_DIC = "/Users/qi/upload";
+    public final static String FILE_UPLOAD_DIC = "D:\\Study\\upload\\";
     /*
      * 首页轮播图数量
      * */
