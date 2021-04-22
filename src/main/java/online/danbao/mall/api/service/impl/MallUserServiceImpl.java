@@ -115,4 +115,3 @@ public class MallUserServiceImpl implements MallUserService {
         return mallUserTokenMapper.deleteByPrimaryKey(userId) > 0;
     }
 }
-

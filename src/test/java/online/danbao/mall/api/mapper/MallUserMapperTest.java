@@ -26,14 +26,14 @@ class MallUserMapperTest {
 
     @Test
     void register() {
-        String register = mallUserService.register("13300001111", "123123");
+        String register = mallUserService.register("13312320111", "123123");
         log.info(register);
         assertEquals("success", register);
     }
 
     @Test
     void login() {
-        String login = mallUserService.login("13300001111", "4297f44b13955235245b2497399d7a93");
+        String login = mallUserService.login("13312320111", "4297f44b13955235245b2497399d7a93");
         //返回了登录用户的token，会在tb_mall_user_token表生成一条token记录
         log.info(login);
     }

@@ -2,18 +2,14 @@ package online.danbao.mall.api.mapper;
 
 import online.danbao.mall.api.entity.MallUserToken;
 
-/**
- * @Entity online.danbao.mall.api.entity.MallUserToken
- */
 public interface MallUserTokenMapper {
-
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Long userId);
 
     int insert(MallUserToken record);
 
     int insertSelective(MallUserToken record);
 
-    MallUserToken selectByPrimaryKey(Long id);
+    MallUserToken selectByPrimaryKey(Long userId);
 
     int updateByPrimaryKeySelective(MallUserToken record);
 
@@ -21,7 +17,3 @@ public interface MallUserTokenMapper {
 
     MallUserToken selectByToken(String token);
 }
-
-
-
-
