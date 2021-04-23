@@ -43,7 +43,7 @@ public class Swagger2Config {
                 .ignoredParameterTypes(MallUser.class)
                 .select()
                 // 修改为自己的 controller 包路径
-                .apis(RequestHandlerSelectors.basePackage("online.mall.api"))
+                .apis(RequestHandlerSelectors.basePackage("online.danbao.mall.api"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(swaggerParams);

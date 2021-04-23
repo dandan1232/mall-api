@@ -6,6 +6,7 @@ import lombok.Data;
 
 /**
  * 收货地址表
+ * @author lindand
  * @TableName tb_mall_user_address
  */
 @Data

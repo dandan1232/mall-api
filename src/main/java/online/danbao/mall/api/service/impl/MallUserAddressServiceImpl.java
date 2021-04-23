@@ -33,15 +33,13 @@ public class MallUserAddressServiceImpl implements MallUserAddressService {
     @Override
     public Boolean saveUserAddress(MallUserAddress mallUserAddress) {
         Date now = new Date();
-        if (mallUserAddress.getDefaultFlag().intValue() == 1) {
-            //添加默认地址，需要将原有的默认地址修改掉
+        if (mallUserAddress.getDefaultFlag().intValue() == 1) {            //添加默认地址，需要将原有的默认地址修改掉
             MallUserAddress defaultAddress = mallUserAddressMapper.getMyDefaultAddress(mallUserAddress.getUserId());
             if (defaultAddress != null) {
                 defaultAddress.setDefaultFlag((byte) 0);
                 defaultAddress.setUpdateTime(now);
                 int updateResult = mallUserAddressMapper.updateByPrimaryKeySelective(defaultAddress);
-                if (updateResult < 1) {
-                    //未更新成功
+                if (updateResult < 1) {                    //未更新成功
                     MallException.fail(ServiceResultEnum.DB_ERROR.getResult());
                 }
             }
@@ -51,18 +49,14 @@ public class MallUserAddressServiceImpl implements MallUserAddressService {
 
     @Override
     public Boolean updateMallUserAddress(MallUserAddress mallUserAddress) {
-        MallUserAddress tempAddress = getMallUserAddressById(mallUserAddress.getAddressId());
-        //需要将参数中的地址修改为默认地址
-        if (mallUserAddress.getDefaultFlag().intValue() == 1) {
-            //先获取原来的默认地址
+        MallUserAddress tempAddress = getMallUserAddressById(mallUserAddress.getAddressId());        //需要将参数中的地址修改为默认地址
+        if (mallUserAddress.getDefaultFlag().intValue() == 1) {            //先获取原来的默认地址
             MallUserAddress defaultAddress = mallUserAddressMapper.getMyDefaultAddress(mallUserAddress.getUserId());
-            if (defaultAddress != null) {
-                //存在默认地址且默认地址并不是当前修改的地址
+            if (defaultAddress != null) {                //存在默认地址且默认地址并不是当前修改的地址
                 defaultAddress.setDefaultFlag((byte) 0);
                 defaultAddress.setUpdateTime(new Date());
                 int updateResult = mallUserAddressMapper.updateByPrimaryKeySelective(defaultAddress);
-                if (updateResult < 1) {
-                    //未更新成功
+                if (updateResult < 1) {                    //未更新成功
                     MallException.fail(ServiceResultEnum.DB_ERROR.getResult());
                 }
             }

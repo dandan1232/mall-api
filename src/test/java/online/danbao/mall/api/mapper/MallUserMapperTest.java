@@ -22,39 +22,41 @@ import static org.junit.jupiter.api.Assertions.*;
 @Slf4j
 class MallUserMapperTest {
     @Resource
-    private MallUserService mallUserService;
+    private MallUserMapper mallUserMapper;
 
     @Test
-    void register() {
-        String register = mallUserService.register("13312320111", "123123");
-        log.info(register);
-        assertEquals("success", register);
+    void insert() {
+        //MallUser mallUser = MallUser.builder()
+        //        .nickName("测试用户")
+        //        .loginName("13099990000")
+        //        .passwordMd5("e10adc3949ba59abbe56e057f20f883e")
+        //        .address("江苏南京")
+        //        .introduceSign("测试用户")
+        //        .isDeleted((byte) 0)
+        //        .lockedFlag((byte) 0)
+        //        .createTime(new Date())
+        //        .build();
+        //int count = mallUserMapper.insert(mallUser);
+        //assertEquals(1, count);
     }
 
     @Test
-    void login() {
-        String login = mallUserService.login("13312320111", "4297f44b13955235245b2497399d7a93");
-        //返回了登录用户的token，会在tb_mall_user_token表生成一条token记录
-        log.info(login);
+    void selectByPrimaryKey() {
+        //MallUser mallUser = mallUserMapper.selectByPrimaryKey(1L);
+        //System.out.println(mallUser);
     }
 
     @Test
-    void updateUserInfo() {
-        //修改10号用户信息,可修改的字段为MallUserUpdateParam的属性
-        MallUserUpdateParam mup = new MallUserUpdateParam();
-        mup.setNickName("新昵称");
-        mup.setPasswordMd5("e10adc3949ba59abbe56e057f20f883e");
-        mup.setIntroduceSign("开到荼蘼");
-        Boolean result = mallUserService.updateUserInfo(mup, 10L);
-        log.info(result.toString());
-        assertTrue(result);
+    void selectByLoginName() {
+        //MallUser mallUser = mallUserMapper.selectByLoginName("13951905171");
+        //log.info("用户信息：" + mallUser);
+        //assertEquals(mallUser.getNickName(), "陶然然");
     }
 
     @Test
-    void logout() {
-        //会在tb_mall_user_token表中删掉10号用户的一条token数据
-        Boolean logout = mallUserService.logout(10L);
-        log.info(logout.toString());
-        assertTrue(logout);
+    void selectByLoginNameAndPasswd() {
+        //MallUser mallUser = mallUserMapper.selectByLoginNameAndPasswd("13951905171", "e10adc3949ba59abbe56e057f20f883e");
+        //log.info("用户信息：" + mallUser);
+        //assertEquals(mallUser.getNickName(), "陶然然");
     }
 }
