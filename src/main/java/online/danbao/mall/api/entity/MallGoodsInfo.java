@@ -1,18 +1,31 @@
 package online.danbao.mall.api.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 
+ * @author 蛋宝
  * @TableName tb_mall_goods_info
  */
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("tb_mall_goods_info")
 public class MallGoodsInfo implements Serializable {
     /**
      * 商品表主键id
      */
+    @TableId
     private Long goodsId;
 
     /**
@@ -78,6 +91,7 @@ public class MallGoodsInfo implements Serializable {
     /**
      * 商品添加时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
     /**
@@ -88,6 +102,7 @@ public class MallGoodsInfo implements Serializable {
     /**
      * 商品修改时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updateTime;
 
     private static final long serialVersionUID = 1L;

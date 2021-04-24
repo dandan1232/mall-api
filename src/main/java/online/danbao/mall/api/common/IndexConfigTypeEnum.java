@@ -1,31 +1,39 @@
 package online.danbao.mall.api.common;
 
+
 /**
+ * @description: 首页配置项枚举 1-搜索框热搜 2-搜索下拉框热搜 3-(首页)热销商品 4-(首页)新品上线 5-(首页)为你推荐
  * @author: 蛋宝
- * @date: 2021/4/20 10:50
- * @description: 首页配置项枚举：1-搜索框热搜 2-搜索下拉框热搜 3-（首页）热销商品 4-（首页）新品上线 5-（首页）为你推荐
- */
+ * @since: 2021-04-24
+ **/
 public enum IndexConfigTypeEnum {
     /**
      * 默认值
      */
     DEFAULT(0, "DEFAULT"),
-
     /**
      * 搜索框热搜
      */
     INDEX_SEARCH_HOTS(1, "INDEX_SEARCH_HOTS"),
-
     /**
      * 搜索下拉框热搜
      */
     INDEX_SEARCH_DOWN_HOTS(2, "INDEX_SEARCH_DOWN_HOTS"),
-
     /**
-     * (首页新品上线)
+     * (首页)热销商品
      */
-    INDEX_GOODS_RECOMMND(5, "INDEX_GOODS_RECOMMEND");
+    INDEX_GOODS_HOT(3, "INDEX_GOODS_HOTS"),
+    /**
+     * (首页)新品上线
+     */
+    INDEX_GOODS_NEW(4, "INDEX_GOODS_NEW"),
+    /**
+     * (首页)为你推荐
+     */
+    INDEX_GOODS_RECOMMEND(5, "INDEX_GOODS_RECOMMEND");
+
     private int type;
+
     private String name;
 
     IndexConfigTypeEnum(int type, String name) {
@@ -46,7 +54,7 @@ public enum IndexConfigTypeEnum {
         return type;
     }
 
-    public void setType() {
+    public void setType(int type) {
         this.type = type;
     }
 
@@ -57,4 +65,5 @@ public enum IndexConfigTypeEnum {
     public void setName(String name) {
         this.name = name;
     }
+
 }

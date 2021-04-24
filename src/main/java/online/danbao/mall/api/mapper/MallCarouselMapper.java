@@ -1,27 +1,16 @@
 package online.danbao.mall.api.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import online.danbao.mall.api.entity.MallCarousel;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 /**
+ * @author 蛋宝
  * @Entity online.danbao.mall.api.entity.TbMallCarousel
  */
-public interface MallCarouselMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(MallCarousel record);
-
-    int insertSelective(MallCarousel record);
-
-    MallCarousel selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(MallCarousel record);
-
-    int updateByPrimaryKey(MallCarousel record);
-
+public interface MallCarouselMapper extends BaseMapper<MallCarousel> {
     /**
      * 查询number个轮播图数据
      *
@@ -29,7 +18,6 @@ public interface MallCarouselMapper {
      * @return 轮播图
      */
     List<MallCarousel> findCarouselsByNum(@Param("number") int number);
-
 }
 
 

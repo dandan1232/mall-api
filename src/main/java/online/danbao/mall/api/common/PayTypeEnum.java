@@ -1,10 +1,10 @@
 package online.danbao.mall.api.common;
 
 /**
+ * @description: 支付类型枚举:0.无 1.支付宝 2.微信支付
  * @author: 蛋宝
- * @date: 2021/4/20 10:54
- * @description: 支付类型枚举：0.无 1.支付宝 2.微信支付
- */
+ * @since: 2021-04-20
+ **/
 public enum PayTypeEnum {
     /**
      * 默认值
@@ -17,14 +17,15 @@ public enum PayTypeEnum {
     /**
      * 支付宝
      */
-    ALT_PAY(1, "支付宝"),
+    ALI_PAY(1, "支付宝"),
     /**
      * 微信支付
      */
     WECHAT_PAY(2, "微信支付");
-    private int payType;
-    private String name;
 
+    private int payType;
+
+    private String name;
 
     PayTypeEnum(int payType, String name) {
         this.payType = payType;

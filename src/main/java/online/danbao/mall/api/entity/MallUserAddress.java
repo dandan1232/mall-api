@@ -1,18 +1,30 @@
 package online.danbao.mall.api.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 收货地址表
+ * @author 蛋宝
  * @TableName tb_mall_user_address
  */
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("tb_mall_user_address")
 public class MallUserAddress implements Serializable {
     /**
      * 
      */
+    @TableId
     private Long addressId;
 
     /**

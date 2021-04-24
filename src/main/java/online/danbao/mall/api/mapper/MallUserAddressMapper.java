@@ -1,27 +1,15 @@
 package online.danbao.mall.api.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import online.danbao.mall.api.entity.MallUserAddress;
 
 import java.util.List;
 
 /**
- * @author mqxu
+ * @author 蛋宝
  * @Entity online.danbao.mall.api.entity.TbMallUserAddress
  */
-public interface MallUserAddressMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(MallUserAddress record);
-
-    int insertSelective(MallUserAddress record);
-
-    MallUserAddress selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(MallUserAddress record);
-
-    int updateByPrimaryKey(MallUserAddress record);
-
+public interface MallUserAddressMapper extends BaseMapper<MallUserAddress> {
     /**
      * 根据用户id获取默认收货地址
      *
@@ -37,8 +25,6 @@ public interface MallUserAddressMapper {
      * @return 收货地址列表
      */
     List<MallUserAddress> findMyAddressList(Long userId);
-
-
 }
 
 

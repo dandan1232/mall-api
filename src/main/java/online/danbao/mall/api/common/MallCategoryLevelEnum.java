@@ -1,21 +1,19 @@
 package online.danbao.mall.api.common;
 
 /**
- * @author: 蛋宝
- * @date: 2021/4/20 10:31
  * @description: 分类级别枚举
- */
+ * @author: 蛋宝
+ * @since: 2021-04-24
+ **/
 public enum MallCategoryLevelEnum {
     /**
      * 默认值
      */
     DEFAULT(0, "ERROR"),
-
     /**
      * 一级分类
      */
     LEVEL_ONE(1, "一级分类"),
-
     /**
      * 二级分类
      */

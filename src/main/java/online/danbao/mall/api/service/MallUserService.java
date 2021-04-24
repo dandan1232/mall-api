@@ -4,7 +4,7 @@ import online.danbao.mall.api.controller.param.MallUserUpdateParam;
 
 /**
  * @description: 用户Service接口
- * @author: mqxu
+ * @author: 蛋宝
  * @since: 2021-04-21
  **/
 public interface MallUserService {

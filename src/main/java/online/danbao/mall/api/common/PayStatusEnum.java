@@ -1,10 +1,10 @@
 package online.danbao.mall.api.common;
 
 /**
+ * @description: 支付状态枚举:0.支付中 1.支付成功 -1.支付失败
  * @author: 蛋宝
- * @date: 2021/4/20 10:40
- * @description: 支付状态枚举：0.支付中 1.支付成功 -1.支付失败
- */
+ * @since: 2021-04-24
+ **/
 public enum PayStatusEnum {
     /**
      * 支付失败
@@ -18,7 +18,9 @@ public enum PayStatusEnum {
      * 支付成功
      */
     PAY_SUCCESS(1, "支付成功");
+
     private int payStatus;
+
     private String name;
 
     PayStatusEnum(int payStatus, String name) {

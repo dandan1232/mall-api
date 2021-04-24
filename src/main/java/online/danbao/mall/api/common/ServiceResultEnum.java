@@ -1,10 +1,10 @@
 package online.danbao.mall.api.common;
 
 /**
- * @author: 蛋宝
- * @date: 2021/4/20 10:47
  * @description: 业务结果枚举
- */
+ * @author: 蛋宝
+ * @since: 2021-04-20
+ **/
 public enum ServiceResultEnum {
     /**
      * error
@@ -138,6 +138,7 @@ public enum ServiceResultEnum {
      * database error
      */
     DB_ERROR("database error");
+
     private String result;
 
     ServiceResultEnum(String result) {

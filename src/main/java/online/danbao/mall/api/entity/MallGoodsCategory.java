@@ -1,18 +1,30 @@
 package online.danbao.mall.api.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 
+ * @author 蛋宝
  * @TableName tb_mall_goods_category
  */
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("tb_mall_goods_category")
 public class MallGoodsCategory implements Serializable {
     /**
      * 分类id
      */
+    @TableId
     private Long categoryId;
 
     /**

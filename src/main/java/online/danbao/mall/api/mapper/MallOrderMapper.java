@@ -1,24 +1,13 @@
 package online.danbao.mall.api.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import online.danbao.mall.api.entity.MallOrder;
 
 /**
+ * @author 蛋宝
  * @Entity online.danbao.mall.api.entity.TbMallOrder
  */
-public interface MallOrderMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(MallOrder record);
-
-    int insertSelective(MallOrder record);
-
-    MallOrder selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(MallOrder record);
-
-    int updateByPrimaryKey(MallOrder record);
-
+public interface MallOrderMapper extends BaseMapper<MallOrder> {
 }
 
 

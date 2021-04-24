@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @description: 用户收货地址接口
- * @author: mqxu
+ * @author: 蛋宝
  * @since: 2021-04-22
  **/
 public interface MallUserAddressService {

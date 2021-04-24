@@ -1,25 +1,13 @@
 package online.danbao.mall.api.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import online.danbao.mall.api.entity.MallAdminUser;
 
 /**
- * @author mqxu
+ * @author 蛋宝
  * @Entity online.danbao.mall.api.entity.MallAdminUser
  */
-public interface MallAdminUserMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(MallAdminUser record);
-
-    int insertSelective(MallAdminUser record);
-
-    MallAdminUser selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(MallAdminUser record);
-
-    int updateByPrimaryKey(MallAdminUser record);
-
+public interface MallAdminUserMapper extends BaseMapper<MallAdminUser> {
 }
 
 
