@@ -4,7 +4,12 @@ import online.danbao.mall.api.entity.MallUserAddress;
 
 import java.util.List;
 
+/**
+ * @author mqxu
+ * @Entity online.danbao.mall.api.entity.TbMallUserAddress
+ */
 public interface MallUserAddressMapper {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(MallUserAddress record);
@@ -32,4 +37,10 @@ public interface MallUserAddressMapper {
      * @return 收货地址列表
      */
     List<MallUserAddress> findMyAddressList(Long userId);
+
+
 }
+
+
+
+

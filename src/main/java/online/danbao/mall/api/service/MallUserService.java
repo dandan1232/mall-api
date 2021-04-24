@@ -3,10 +3,10 @@ package online.danbao.mall.api.service;
 import online.danbao.mall.api.controller.param.MallUserUpdateParam;
 
 /**
- * @author 蛋宝
- * @date 2021/4/21
- * @description MallUserService
- */
+ * @description: 用户Service接口
+ * @author: mqxu
+ * @since: 2021-04-21
+ **/
 public interface MallUserService {
     /**
      * 用户注册

@@ -18,10 +18,10 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 /**
- * @author 蛋宝
- * @date 2021/4/21
- * @description MallUserServiceImpl
- */
+ * @description:
+ * @author: mqxu
+ * @since: 2021-04-21
+ **/
 @Service
 public class MallUserServiceImpl implements MallUserService {
     @Resource

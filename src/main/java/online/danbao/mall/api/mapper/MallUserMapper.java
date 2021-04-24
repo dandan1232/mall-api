@@ -1,11 +1,14 @@
 package online.danbao.mall.api.mapper;
 
-import org.apache.ibatis.annotations.Param;
 import online.danbao.mall.api.entity.MallUser;
+import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
+/**
+ * @author mqxu
+ * @description: MallUserMapper
+ */
 public interface MallUserMapper {
+
     /**
      * 根据主键删除记录
      *
@@ -71,5 +74,8 @@ public interface MallUserMapper {
      */
     MallUser selectByLoginNameAndPasswd(@Param("loginName") String loginName, @Param("password") String password);
 
-    List<MallUser> selectAll();
 }
+
+
+
+

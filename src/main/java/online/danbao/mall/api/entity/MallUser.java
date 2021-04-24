@@ -1,29 +1,26 @@
 package online.danbao.mall.api.entity;
 
-import java.io.Serializable;
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.sun.istack.internal.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sun.plugin2.message.Message;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
- * 
+ * @author mqxu
  * @TableName tb_mall_user
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MallUser {
+public class MallUser implements Serializable {
     /**
      * 用户主键id
      */
-
     private Long userId;
 
     /**
@@ -46,6 +43,9 @@ public class MallUser {
      */
     private String introduceSign;
 
+    /**
+     *
+     */
     private String address;
 
     /**
@@ -63,4 +63,6 @@ public class MallUser {
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
+
+    private static final long serialVersionUID = 1L;
 }

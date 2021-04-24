@@ -2,16 +2,25 @@ package online.danbao.mall.api.mapper;
 
 import online.danbao.mall.api.entity.MallIndexConfig;
 
+/**
+ * @Entity online.danbao.mall.api.entity.TbMallIndexConfig
+ */
 public interface MallIndexConfigMapper {
-    int deleteByPrimaryKey(Long configId);
+
+    int deleteByPrimaryKey(Long id);
 
     int insert(MallIndexConfig record);
 
     int insertSelective(MallIndexConfig record);
 
-    MallIndexConfig selectByPrimaryKey(Long configId);
+    MallIndexConfig selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(MallIndexConfig record);
 
     int updateByPrimaryKey(MallIndexConfig record);
+
 }
+
+
+
+

@@ -1,7 +1,5 @@
 package online.danbao.mall.api.service;
 
-
-
 import online.danbao.mall.api.controller.vo.MallUserAddressVO;
 import online.danbao.mall.api.entity.MallUserAddress;
 
@@ -9,7 +7,7 @@ import java.util.List;
 
 /**
  * @description: 用户收货地址接口
- * @author: 蛋宝
+ * @author: mqxu
  * @since: 2021-04-22
  **/
 public interface MallUserAddressService {
