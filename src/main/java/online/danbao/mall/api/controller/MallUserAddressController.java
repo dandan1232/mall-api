@@ -86,12 +86,14 @@ public class MallUserAddressController {
 
     @DeleteMapping("/address/{addressId}")
     @ApiOperation(value = "删除收货地址", notes = "传参为地址id")
-    public Result deleteAddress(@PathVariable("addressId") Long addressId, @TokenToMallUser MallUser loginMallUser) {
+    public Result deleteAddress(@PathVariable("addressId") Long addressId,
+                                @TokenToMallUser MallUser loginMallUser) {
         MallUserAddress mallUserAddressById = mallUserAddressService.getMallUserAddressById(addressId);
         if (!loginMallUser.getUserId().equals(mallUserAddressById.getUserId())) {
             return ResultGenerator.genFailResult(ServiceResultEnum.REQUEST_FORBIDDEN_ERROR.getResult());
         }
-        Boolean deleteResult = mallUserAddressService.deleteById(addressId);        //删除成功
+        Boolean deleteResult = mallUserAddressService.deleteById(addressId);
+        //删除成功
         if (deleteResult) {
             return ResultGenerator.genSuccessResult();
         }        //删除失败

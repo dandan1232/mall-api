@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sun.istack.internal.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sun.plugin2.message.Message;
 
 /**
  * 
@@ -21,6 +23,7 @@ public class MallUser {
     /**
      * 用户主键id
      */
+
     private Long userId;
 
     /**
