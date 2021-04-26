@@ -28,6 +28,11 @@ public class MallUser implements Serializable {
     private Long userId;
 
     /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
      * 用户昵称
      */
     private String nickName;
