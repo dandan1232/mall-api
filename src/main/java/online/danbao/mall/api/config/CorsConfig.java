@@ -10,10 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author 蛋宝
- * @date 2021/4/21
- * @description CorsConfig
- */
+ * @description: 跨域配置类
+ * @author: 蛋宝
+ **/
 @Configuration
 public class CorsConfig {
     private CorsConfiguration buildConfig() {
@@ -24,9 +23,11 @@ public class CorsConfig {
         List<String> allowedOriginPatterns = new ArrayList<>();
         allowedOriginPatterns.add("*");
         corsConfiguration.setAllowedOriginPatterns(allowedOriginPatterns);
-        // 允许任何头
+        // 允许的自定义请求头
+        //String[] customHeaders = {"token", "platform", "userId"};
+        //corsConfiguration.setAllowedHeaders(Arrays.asList(customHeaders));
         corsConfiguration.addAllowedHeader("*");
-        // 允许任何方法（post、get等）
+        // 允许的请求方法
         corsConfiguration.addAllowedMethod("*");
         return corsConfiguration;
     }

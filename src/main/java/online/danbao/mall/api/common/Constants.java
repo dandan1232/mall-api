@@ -3,7 +3,7 @@ package online.danbao.mall.api.common;
 /**
  * @description: 常量类
  * @author: 蛋宝
- * @since: 2021-04-24
+ * @since: 2021-04-20
  **/
 public class Constants {
     /**
@@ -11,6 +11,7 @@ public class Constants {
      * 这里是mac和linux写法，切记upload后面要加 /
      * windows写法为："D:\\upload\\"
      */
+    //public final static String FILE_UPLOAD_DIC = "/Users/mqxu/upload/";
     public final static String FILE_UPLOAD_DIC = "D:\\Study\\upload\\";
 
     /**
@@ -92,4 +93,22 @@ public class Constants {
      * 个人信息默认简介
      */
     public final static String USER_INTRO = "随心所欲，丰富多彩";
+
+
+    /**
+     * API登录接口端点
+     */
+    public final static String API_LOGIN = "/api/v1/user/login";
+
+    /**
+     * API注册接口端点
+     */
+    public final static String API_REGISTER = "/api/v1/user/register";
+
+    /**
+     * API首页接口端点
+     */
+    public final static String API_INDEX = "/api/v1/index-infos";
+
+
 }

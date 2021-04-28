@@ -1,9 +1,5 @@
 package online.danbao.mall.api.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import lombok.extern.slf4j.Slf4j;
 import online.danbao.mall.api.common.Constants;
 import online.danbao.mall.api.common.ServiceResultEnum;
 import online.danbao.mall.api.config.annotation.TokenToMallUser;
@@ -17,17 +13,21 @@ import online.danbao.mall.api.util.BaseBeanUtil;
 import online.danbao.mall.api.util.NumberUtil;
 import online.danbao.mall.api.util.Result;
 import online.danbao.mall.api.util.ResultGenerator;
-import org.springframework.util.StringUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.Map;
 
 /**
- * @author: 蛋宝
- * @date: 2021/4/22 14:46
  * @description: MallUserController
- */
+ * @author: 蛋宝
+ * @since: 2021-04-21
+ **/
 @RestController
 @Api(value = "v1", tags = "1.楼楼商城用户操作相关接口")
 @RequestMapping("/api/v1")
@@ -36,25 +36,28 @@ public class MallUserController {
     @Resource
     private MallUserService mallUserService;
 
-
     @PostMapping("/user/login")
     @ApiOperation(value = "登录接口", notes = "返回token")
-    public Result<String> login(@RequestBody @Valid MallUserLoginParam mallUserLoginParam) {
+    public Result login(@RequestBody @Valid MallUserLoginParam mallUserLoginParam) {
         if (!NumberUtil.isPhone(mallUserLoginParam.getLoginName())) {
             return ResultGenerator.genFailResult(ServiceResultEnum.LOGIN_NAME_IS_NOT_PHONE.getResult());
         }
-        String loginResult = mallUserService.login(mallUserLoginParam.getLoginName(), mallUserLoginParam.getPasswordMd5());
-
-        log.info("login api,loginName={},loginResult={}", mallUserLoginParam.getLoginName(), loginResult);
-
+        Map<String, Object> loginResult = mallUserService.login(mallUserLoginParam.getLoginName(), mallUserLoginParam.getPasswordMd5());
+        //log.info("login api,loginName={},loginResult={}", mallUserLoginParam.getLoginName(), loginResult);
         //登录成功
-        if (!StringUtils.isEmpty(loginResult) && loginResult.length() == Constants.TOKEN_LENGTH) {
+        String token = loginResult.get("token").toString();
+        if (!token.isEmpty() && token.length() == Constants.TOKEN_LENGTH) {
+            //更新请求头中userId的值为当前登录用户的id，到拦截器继续执行后置操作，记录日志
+            //ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+            //assert servletRequestAttributes != null;
+            //HttpServletRequest request = servletRequestAttributes.getRequest();
+            //request.setAttribute("userId", loginResult.get("userId").toString());
             Result result = ResultGenerator.genSuccessResult();
             result.setData(loginResult);
             return result;
         }
         //登录失败
-        return ResultGenerator.genFailResult(loginResult);
+        return ResultGenerator.genFailResult(loginResult.get("msg").toString());
     }
 
 
